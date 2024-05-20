@@ -1,14 +1,13 @@
-# Author : Arabian Coconut
-# Date   : 01-09-2023
-# Desc   : This is a small program to open whatsapp links in whatsapp web/desktop
+# Author: Arabian Coconut
+# Date modified: 21-May-2024
+# Desc: This is a small program to open WhatsApp links on WhatsApp web/desktop
 
 import requests
 import webbrowser
 
 
 def whatsapp_app_link(data):
-    phone_number = data
-    url = f"https://api.whatsapp.com/send/?phone={phone_number}&app_absent=0"
+    url = f"https://api.whatsapp.com/send/?phone={data}&app_absent=0"
     r = requests.get(url)
     if r.status_code == 200:
         webbrowser.open(url)
